@@ -1,8 +1,9 @@
 create database pharm;
 
+
 use pharm;
 
-CREATE TABLE companies (
+CREATE TABLE medcompanies (
 	id   INT NOT NULL AUTO_INCREMENT ,
     name VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
@@ -10,7 +11,9 @@ CREATE TABLE companies (
 
 
 
-insert into companies(name)
+
+
+insert into medCompanies(name)
 values
 ('pfizer'),
 ('Teva'),
@@ -25,15 +28,15 @@ CREATE TABLE medicaments (
 id   INT NOT NULL AUTO_INCREMENT ,
 name VARCHAR(255) not null,
 weight int not null,
-medCompanyId int Not null,
+medCompaniesId int Not null,
 primary key (id),
-FOREIGN KEY(medcompanyId) REFERENCES companies(id)
+FOREIGN KEY(medcompaniesId) REFERENCES medcompanies(id)
 );
 
 
 
 
-insert into medicaments (name,weight,medcompanyId)
+insert into medicaments (name,weight,medCompaniesId)
 values 
 ('doliprane',500,2 ),
 ('aspegic',250,3),
@@ -62,5 +65,10 @@ values
 
 select * from medicaments;
 
-select * from companies;
+select * from medCompanies;
+
+
+
+
+
 
