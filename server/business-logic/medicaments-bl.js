@@ -1,12 +1,17 @@
-// import customersDal from '../dal/customers-dal.js';
+import medicamentsDal from "../data-acces-layer/medicaments-dal.js"
 
 const getAll = async () => {
     return await medicamentsDal.getAll()
 }
 
 
-const addMedcompanies = async (body) => {
+const addMedicaments = async (body) => {
    return await medicamentsDal.addMedicaments(
-       body.name, body.weight, medcompaniesId)
+       body.name, body.weight, body.medcompaniesId)
+}
+
+export{
+    getAll,
+    addMedicaments
 }
 
